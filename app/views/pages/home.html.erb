@@ -1,0 +1,14 @@
+<h1>Bienvenue sur notre site</h1>
+<p>Découvrez nos services et notre expertise.</p>
+
+
+<div class="dropdown">
+  <button id="menuButton" class="dropbtn">Menu</button>
+  <div id="menuOptions" class="dropdown-content" style="display: none;">
+    <%= link_to 'Accueil', home_path %>
+    <%= link_to 'Services', services_path %>
+    <%= link_to 'À propos', about_path %>
+    <%= link_to 'Galerie', gallery_path %>
+    <%= link_to 'Contact', contact_path %>
+  </div>
+</div>
