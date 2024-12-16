@@ -1,0 +1,17 @@
+<h1>Contactez-nous</h1>
+<%= form_with url: contact_path, method: :post, local: true do %>
+  <label for="name">Nom :</label>
+  <%= text_field_tag :name %><br>
+
+  <label for="email">Email :</label>
+  <%= email_field_tag :email %><br>
+
+  <label for="message">Message :</label>
+  <%= text_area_tag :message %><br>
+
+  <%= submit_tag "Envoyer" %>
+<% end %>
+
+<div>
+  <%= link_to 'Retour à l\'accueil', home_path, class: 'btn btn-primary' %>
+</div>
