@@ -1,8 +1,8 @@
-<<<<<<< HEAD
 # coach_sportif
+
 website coach sportif
 Vitrine coach sportif
-=======
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -27,4 +27,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
->>>>>>> 9d5e177 (Initial commit)
