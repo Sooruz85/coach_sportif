@@ -15,13 +15,22 @@ class PagesController < ApplicationController
   end
 
   def submit_contact
-    # Exemple de gestion des paramètres envoyés
     @name = params[:name]
     @message = params[:message]
-    flash[:notice] = "Thank you, #{@name}! Your message has been received."
-    redirect_to contact_path
-  end
+    @contact_email = params[:email]
 
+    if @name.present? && @message.present? && @contact_email.present? && @contact_email.match?(URI::MailTo::EMAIL_REGEXP)
+      # Envoyer un email
+      ContactMailer.contact_email(@name, @contact_email, @message).deliver_now
+
+      flash[:notice] = "Merci, #{@name} ! Votre message a été envoyé."
+      redirect_to contact_path
+    else
+      flash[:alert] = "Veuillez remplir tous les champs et entrer une adresse email valide."
+      redirect_to contact_path
+    end
+  end
+  
   def coaching
   end
 

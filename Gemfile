@@ -8,6 +8,8 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+gem 'activerecord', '~> 7.1'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
@@ -60,4 +62,12 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+end
+
+gem "stringio", "= 3.1.2"
+
+group :development, :test do
+  # gem 'sqlite3', '~> 1.4.2'
+  gem 'pg', '>= 1.5.0'
+
 end

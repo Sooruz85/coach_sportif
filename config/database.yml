@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch("DB_USERNAME") { 'postgres' } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { 'perrier' } %>
+  host: <%= ENV.fetch("DB_HOST") { 'localhost' } %>
+
+development:
+  <<: *default
+  database: coach_sportif_development
+
+test:
+  <<: *default
+  database: coach_sportif_test
+
+production:
+  <<: *default
+  database: coach_sportif_production
+  username: <%= ENV.fetch("DB_USERNAME") { 'your_production_username' } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { 'your_production_password' } %>
+  host: <%= ENV.fetch("DB_HOST") { 'your_production_host' } %>
