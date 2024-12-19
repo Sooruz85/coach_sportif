@@ -1,11 +1,51 @@
 <h1>Nos Services</h1>
-<ul>
-  <li><%= link_to 'Coaching personnalisé', coaching_path %></li>
-  <li><%= link_to 'Entraînements en groupe', group_training_path %></li>
-  <li><%= link_to 'Préparation physique spécifique', specific_physical_preparation_path %></li>
-</ul>
 
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Carte 1 -->
+    <div class="col">
+      <div class="card h-100">
+        <%= image_tag 'Card 1.webp', class: 'card-img-top', alt: 'Coaching personnalisé' %>
+        <div class="card-body">
+          <h5 class="card-title">Coaching personnalisé</h5>
+          <p class="card-text">Un programme adapté à vos besoins et objectifs pour des résultats maximaux.</p>
+          <div class="text-center">
+            <%= link_to 'Voir plus', coaching_path, class: 'button-56', role: 'button' %>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div>
-  <%= link_to 'Retour à l\'accueil', home_path, class: 'btn btn-primary' %>
+    <!-- Carte 2 -->
+    <div class="col">
+      <div class="card h-100">
+        <%= image_tag 'Card 2.webp', class: 'card-img-top', alt: 'Entraînements en groupe' %>
+        <div class="card-body">
+          <h5 class="card-title">Entraînements en groupe</h5>
+          <p class="card-text">Des séances collectives pour travailler en équipe et vous motiver ensemble.</p>
+          <div class="text-center">
+            <%= link_to 'Voir plus', group_training_path, class: 'button-56', role: 'button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carte 3 -->
+    <div class="col">
+      <div class="card h-100">
+        <%= image_tag 'Card 3.webp', class: 'card-img-top', alt: 'Préparation physique spécifique' %>
+        <div class="card-body">
+          <h5 class="card-title">Préparation physique spécifique</h5>
+          <p class="card-text">Un programme sur mesure pour les sportifs visant une performance optimale.</p>
+          <div class="text-center">
+            <%= link_to 'Voir plus', specific_physical_preparation_path, class: 'button-56', role: 'button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center mt-4">
+  <%= link_to 'Retour à l\'accueil', home_path, class: 'button-56', role: 'button' %>
 </div>
