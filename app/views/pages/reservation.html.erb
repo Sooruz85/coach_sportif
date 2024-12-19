@@ -1,0 +1,38 @@
+<!-- app/views/pages/reservation.html.erb -->
+
+<h1>Réservez votre Coaching Personnalisé</h1>
+
+<%= form_with model: @reservation, url: coaching_reservation_path, local: true do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, 'Nom complet', class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control', required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :email, 'Email', class: 'form-label' %>
+    <%= form.email_field :email, class: 'form-control', required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :date, 'Date souhaitée', class: 'form-label' %>
+    <%= form.date_field :date, class: 'form-control', required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :time, 'Heure souhaitée', class: 'form-label' %>
+    <%= form.time_field :time, class: 'form-control', required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :message, 'Message (facultatif)', class: 'form-label' %>
+    <%= form.text_area :message, class: 'form-control' %>
+  </div>
+
+  <div class="text-center">
+    <%= form.submit 'Réserver', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<div class="text-center mt-3">
+  <%= link_to 'Retour à l\'accueil', home_path, class: 'btn btn-secondary' %>
+</div>

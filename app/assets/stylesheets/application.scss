@@ -184,3 +184,19 @@ body {
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
+/* app/assets/stylesheets/application.css */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* app/assets/stylesheets/application.css */
+.navbar-custom {
+  background: linear-gradient(to right, #E2725B, #F7B7B2); /* Dégradé du terracota au rose pastel */
+}
+
+/* Enlever la flèche du menu déroulant */
+.dropdown-toggle::after {
+  display: none; /* Masquer la flèche */
+}

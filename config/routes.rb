@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get 'group_training', to: 'pages#group_training', as: :group_training
   get 'specific_physical_preparation', to: 'pages#specific_physical_preparation', as: :specific_physical_preparation
 
+  # Routes pour la réservation de coaching
+  get 'coaching/reservation', to: 'pages#reservation', as: 'coaching_reservation'
+  post 'coaching/reservation', to: 'pages#create_reservation'
+
   # Health check pour vérifier l'état de l'application
   get "up" => "rails/health#show", as: :rails_health_check
 

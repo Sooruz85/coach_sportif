@@ -5,35 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CoachSportif</title>
 
+    <!-- CSRF et CSP -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <!-- Bootstrap CSS depuis CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Font Awesome pour les icônes -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Import des fichiers CSS compilés par Rails -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <!-- Styles personnalisés pour le menu horizontal -->
+    <style>
+      /* Positionner le menu à l'horizontale */
+      .dropdown-menu {
+        display: flex;
+        flex-direction: row; /* Aligner les éléments horizontalement */
+        position: absolute; /* Positionner par rapport à son parent */
+        left: auto; /* Laisser le comportement par défaut pour la gauche */
+        transform: translateX(-100%); /* Positionner complètement à gauche du déclencheur */
+        top: 0; /* Garder le menu aligné sur l'axe vertical */
+      }
+
+      .dropdown-menu .dropdown-item {
+        padding: 10px 20px; /* Espacement autour des liens */
+      }
+
+      /* Enlever la flèche du menu déroulant */
+      .dropdown-toggle::after {
+        display: none; /* Masquer la flèche */
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <!-- Logo avec menu déroulant -->
-    <div class="dropdown">
-      <a href="#" id="menuDropdown">
-        <%= image_tag 'logo.png', alt: 'Logo', class: 'img-fluid', style: 'max-height: 50px;' %>
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="menuDropdown">
-        <li><%= link_to 'Home', root_path, class: 'dropdown-item' %></li>
-        <li><%= link_to 'Services', services_path, class: 'dropdown-item' %></li>
-        <li><%= link_to 'Contact', contact_path, class: 'dropdown-item' %></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <nav class="navbar navbar-light navbar-custom">
+      <div class="container-fluid">
+        <!-- Logo avec menu déroulant aligné à droite -->
+        <div class="dropdown ms-auto">
+          <a href="#" id="menuDropdown" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= image_tag 'logo.png', alt: 'Logo', class: 'img-fluid', style: 'max-height: 50px;' %>
+          </a>
+          <!-- Menu déroulant horizontal vers la gauche -->
+          <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+            <li><%= link_to 'Home', root_path, class: 'dropdown-item' %></li>
+            <li><%= link_to 'Services', services_path, class: 'dropdown-item' %></li>
+            <li><%= link_to 'Contact', contact_path, class: 'dropdown-item' %></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <!-- Contenu principal -->
     <div class="container mt-4">

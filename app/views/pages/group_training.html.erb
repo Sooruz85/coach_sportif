@@ -1,6 +1,62 @@
-<h1>Entraînements en Groupe</h1>
-<p>Rejoignez un groupe dynamique pour des séances motivantes et conviviales.</p>
+<!-- app/views/pages/group_training.html.erb -->
 
-<div>
-  <%= link_to 'Retour à l\'accueil', home_path, class: 'btn btn-primary' %>
-</div>
+<%# Header de la page avec le titre du service %>
+<section id="intro" class="text-center py-5">
+  <h1 class="display-4"><%= @service_name %></h1>
+  <p class="lead"><%= @service_description %></p>
+</section>
+
+<%# Section des avantages des entraînements en groupe %>
+<section id="benefits" class="container py-5">
+  <h2 class="text-center mb-4">Pourquoi rejoindre nos entraînements en groupe ?</h2>
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <i class="fas fa-users fa-3x text-primary mb-3"></i>
+      <h4>Motivation collective</h4>
+      <p>Les entraînements en groupe créent une dynamique où chaque membre se soutient et se motive.</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <i class="fas fa-dumbbell fa-3x text-success mb-3"></i>
+      <h4>Exercices variés</h4>
+      <p>Nos séances sont adaptées à tous les niveaux et incluent des exercices variés pour travailler tout le corps.</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <i class="fas fa-trophy fa-3x text-danger mb-3"></i>
+      <h4>Atteindre vos objectifs</h4>
+      <p>Atteignez vos objectifs rapidement grâce à des entraînements guidés par des coachs expérimentés.</p>
+    </div>
+  </div>
+</section>
+
+<%# Section de témoignages (facultative) %>
+<section id="testimonials" class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Ce que disent nos clients</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <blockquote class="blockquote">
+          <p>"Les entraînements en groupe sont une source constante de motivation. Chaque séance est un défi, mais j'adore ça !" </p>
+          <footer class="blockquote-footer">Clara, 32 ans</footer>
+        </blockquote>
+      </div>
+      <div class="col-md-6">
+        <blockquote class="blockquote">
+          <p>"L'esprit d'équipe m'a vraiment aidé à rester motivé et constant. Ces séances m'ont permis de devenir plus fort et plus confiant."</p>
+          <footer class="blockquote-footer">Julien, 28 ans</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# Section pour réserver ou prendre contact %>
+<section id="booking" class="text-center py-5">
+  <h3 class="mb-4">Réservez votre place dès maintenant</h3>
+  <%= link_to 'Réservez maintenant', coaching_reservation_path, class: 'btn btn-primary btn-lg' %>
+</section>
+
+<%# Section avec un bouton de retour à l'accueil %>
+<section id="footer" class="text-center py-4">
+  <%= link_to 'Retour à l\'accueil', home_path, class: 'btn btn-secondary' %>
+</section>
+

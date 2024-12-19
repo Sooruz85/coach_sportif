@@ -1,0 +1,2 @@
+class GroupTraining < ApplicationRecord
+end

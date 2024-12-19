@@ -1,6 +1,126 @@
-<h1>Coaching Personnalisé</h1>
-<p>Des séances adaptées à vos besoins spécifiques pour atteindre vos objectifs.</p>
+<!-- app/views/pages/personalized_coaching.html.erb -->
 
-<div>
-  <%= link_to 'Retour à l\'accueil', home_path, class: 'btn btn-primary' %>
-</div>
+<%# Section 1 : Introduction %>
+<section id="intro" class="text-center py-5 bg-light">
+  <h1 class="display-4">Coaching Personnalisé</h1>
+  <p class="lead">Découvrez nos 5 types de coaching spécialement conçus pour répondre à vos objectifs et besoins spécifiques. Que vous souhaitiez perdre du poids, améliorer vos performances sportives, ou simplement maintenir une bonne condition physique, nous avons un programme adapté pour vous.</p>
+</section>
+
+<%# Section 2 : Types de Coaching %>
+<section id="coaching-types" class="container py-5">
+  <h2 class="text-center mb-5">Nos 5 Types de Coaching Personnalisé</h2>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <%# Coaching 1 : Remise en Forme Générale %>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <i class="fas fa-heartbeat fa-4x text-primary mb-3"></i>
+          <h4 class="card-title">Coaching de Remise en Forme Générale</h4>
+          <p class="card-text">Aidez votre corps à retrouver ou maintenir une condition physique saine grâce à des exercices cardiovasculaires, de renforcement musculaire et d’étirements adaptés.</p>
+        </div>
+      </div>
+    </div>
+
+    <%# Coaching 2 : Perte de Poids %>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <i class="fas fa-weight fa-4x text-success mb-3"></i>
+          <h4 class="card-title">Coaching de Perte de Poids</h4>
+          <p class="card-text">Un accompagnement sur mesure avec des exercices ciblés comme des séances de HIIT et des conseils pour une meilleure posture alimentaire.</p>
+        </div>
+      </div>
+    </div>
+
+    <%# Coaching 3 : Performance Sportive %>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <i class="fas fa-running fa-4x text-danger mb-3"></i>
+          <h4 class="card-title">Coaching pour Performance Sportive</h4>
+          <p class="card-text">Optimisez vos performances sportives avec un entraînement axé sur l'explosivité, l'agilité, la coordination et la force.</p>
+        </div>
+      </div>
+    </div>
+
+    <%# Coaching 4 : Préparation Physique Post-blessure %>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <i class="fas fa-band-aid fa-4x text-warning mb-3"></i>
+          <h4 class="card-title">Coaching Préparation Physique Post-blessure</h4>
+          <p class="card-text">Réhabilitez progressivement vos capacités physiques avec des programmes sécurisés pour renforcer les zones affectées.</p>
+        </div>
+      </div>
+    </div>
+
+    <%# Coaching 5 : Seniors %>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body text-center">
+          <i class="fas fa-walking fa-4x text-info mb-3"></i>
+          <h4 class="card-title">Coaching Personnalisé pour Seniors</h4>
+          <p class="card-text">Maintenez votre mobilité, votre équilibre et votre autonomie avec des exercices doux et adaptés pour renforcer les muscles et prévenir les blessures.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# Section 3 : Tableau Comparatif (Facultatif) %>
+<section id="comparison" class="container py-5">
+  <h2 class="text-center mb-5">Comparez nos Coachings</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type de Coaching</th>
+        <th>Objectif Principal</th>
+        <th>Niveau Requis</th>
+        <th>Durée Moyenne</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Remise en Forme Générale</td>
+        <td>Condition physique saine</td>
+        <td>Débutant à Avancé</td>
+        <td>1 heure</td>
+      </tr>
+      <tr>
+        <td>Perte de Poids</td>
+        <td>Perdre des kilos en excès</td>
+        <td>Débutant à Intermédiaire</td>
+        <td>45 minutes</td>
+      </tr>
+      <tr>
+        <td>Performance Sportive</td>
+        <td>Optimiser les performances</td>
+        <td>Intermédiaire à Avancé</td>
+        <td>1 heure</td>
+      </tr>
+      <tr>
+        <td>Post-blessure</td>
+        <td>Réhabilitation physique</td>
+        <td>Débutant</td>
+        <td>30 à 60 minutes</td>
+      </tr>
+      <tr>
+        <td>Seniors</td>
+        <td>Maintien de la mobilité</td>
+        <td>Débutant</td>
+        <td>45 minutes</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<%# Section 4 : Appel à l'Action %>
+<section id="booking" class="text-center py-5">
+  <h3 class="mb-4">Prêt à Commencer ?</h3>
+  <%= link_to 'Réservez votre Coaching', coaching_reservation_path, class: 'btn btn-primary btn-lg' %>
+</section>
+
+<%# Section 5 : Retour à l'accueil %>
+<section id="footer" class="text-center py-4">
+  <%= link_to 'Retour à l\'accueil', home_path, class: 'btn btn-secondary' %>
+</section>
